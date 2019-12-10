@@ -30,10 +30,10 @@ public class HornH12 implements Wager{
 	@Override
 	public int betWin() {
 		if(Roll.d1 + Roll.d2 == 12) {
-			horn12 = (horn12 /5) * 30 * 2 + (horn12 / 5);
+			horn12 = (horn12 /5) * 30 * 2 + (horn12 / 5 * 2);
 			Bankroll.balance = Bankroll.balance + horn12;
 		}
-		if(Roll.d1 == Roll.d2){
+		else if(Roll.d1 == Roll.d2){
 			horn12 = (horn12 / 5) * 30 + (horn12 / 5);
 			Bankroll.balance = Bankroll.balance + horn12;
 		}else {
@@ -44,7 +44,7 @@ public class HornH12 implements Wager{
 		if(HornH12.horn12 > 0) {
 			System.out.println("Horn High 12 Wins! = $" + horn12);
 		}
-		CrapsLog.update();
+		//CrapsLog.update();
 		horn12 = 0;
 		return horn12;
 	}

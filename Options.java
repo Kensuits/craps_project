@@ -13,6 +13,11 @@ public class Options {
     PropBet prop = new PropBet();
     Horn hb = new Horn();
     HornMenu hm = new HornMenu();
+    Hardways hw = new Hardways();
+    PlaceBets pb = new PlaceBets();
+    Come cb = new Come();
+    DontCome dc = new DontCome();
+    Lay lay = new Lay();
 
 	
 	public Options() {
@@ -21,12 +26,12 @@ public class Options {
 	public void coMenu() throws IOException {
 		
 		
-		System.out.print("  ---- " + player + " - $" + Bankroll.balance + " ----\n");
+		System.out.print("\n  ---- " + player + " - $" + Bankroll.balance + " ----\n");
 		System.out.println("     THE COME OUT ROLL   ");
 		System.out.println("___________________________\n");
-		System.out.println("[1]Passline   [6]Bets Work");
-		System.out.println("[2]Don't Pass [7]Cashout");
-		System.out.println("[3]Field Bet  [8]Rebuy");
+		System.out.println("[1]Passline   [5]Bets Work");
+		System.out.println("[2]Don't Pass [6]Cashout");
+		System.out.println("[3]Field Bet  [7]Rebuy");
 		System.out.println("[4]Prop Bet   [0]Roll Dice");
 		System.out.println("___________________________");
 		
@@ -47,13 +52,12 @@ public class Options {
 			prop.coPropMenu();
 			break;
 		case 5:
-		case 6:
 			peMenu();
-		case 7:
+		case 6:
 			CrapsLog.cashout();
 			System.out.println("$" + Bankroll.balance);
 			break;
-		case 8:
+		case 7:
 			CrapsLog.rebuy();
 			System.out.println("$" + Bankroll.balance);
 			break;
@@ -91,13 +95,23 @@ public class Options {
 			System.out.println(Passline.passBet);		
 			break;
 		case 2:
+			cb.comeBet();
+			break;
 		case 3:
+			dc.dontComeBet();
+			break;
 		case 4:
 			field.fieldBet();
 			break;
 		case 5:
+			pb.placeMenu();
+			break;
 		case 6:
+			hw.hardMenu();
+			break;
 		case 7:
+			lay.lay();
+			break;
 		case 8:
 			prop.pePropMenu();
 			break;

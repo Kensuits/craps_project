@@ -31,7 +31,6 @@ public class AnyCrap implements Wager{
 		if(AnyCrap.anyCrap > 0) {
 			System.out.println("Any Crap = $" + anyCrap);
 		}
-		CrapsLog.update();
 		anyCrap = 0;
 		return anyCrap;
 	}
@@ -42,7 +41,6 @@ public class AnyCrap implements Wager{
 			System.out.println("Any Crap loses.\n");
 		}
 		anyCrap = 0;
-		//CrapsLog.update();
 		return anyCrap;
 	}
 }
